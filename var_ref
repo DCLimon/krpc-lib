@@ -1,0 +1,46 @@
+Reference Frames
+================
+
+vessel.reference_frame
+----------------------
+Frame rotates with vessel's attitude changes
+
+- x term points from CoG directly over the R wing
+- y term points from CoG, thru the nose, to the Whiskey vector
+- z term points from CoG out the bottom of the vessel
+
+vessel.orbital_reference_plane
+-------------------------------
+May change as vessel moves around its orbit, but does not rotate with
+attitude changes.
+
+- x term points from CoG toward center of body being orbited (radial(-))
+- y term points from CoG in orbital prograde direction, tangent to orbit at vessel's current position
+- z term points from CoG in orbital normal(+) (toward the vessel's "North Pole")
+
+vessel.surface_reference_frame
+-------------------------------
+Frame does not rotate with changes in vessel attitude
+
+- x term is an extension of a line from the center of the orbited body, through vessel's CoG, away from the body (radial(+))
+    - basically point upward & is directly perpendicular to plane of ground below
+- y term points to the Northern horizon
+    - points where a compass kept flat relative to ground below would indicate North
+- z term points to the Eastern horizon
+    - points where that same compass would indicate East
+
+vessel.surface_velocity_reference_frame
+----------------------------------------
+Frame rotates as vessel velocity vector rotates
+
+still standard (x,y,z) format, but described out-of-order to make more sense
+
+- y term points from CoG toward vessel surface velocity vector (regardless of nose position/slip angle/AoA)
+- z term points from CoG to the horizon at R-ang to y
+- x term point from CoG in whatever direction is orthogonal to y & z, acting as thumb in R-hand rule
+
+these vector components obey R-hand rule
+
+- start with index & middle
+    - orient middle toward velocity vector to create y while keeping index parallel to floor to define z
+- extend thumb to show direction of x

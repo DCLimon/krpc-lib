@@ -1,0 +1,18 @@
+Class Hierarchy
+===============
+
+Within base.py
+--------------
+
+- Craft
+    - attitude.py
+        - RollController
+        - PitchController
+        - RotationRateController
+        - AttitudeController
+    - throttle.py
+        - ThrottleController
+            - MaxQThrottle
+            - SpeedThrottle
+    - ui.py
+        - TeleUI
